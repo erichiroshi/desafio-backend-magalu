@@ -1,0 +1,14 @@
+version: '3.9'
+
+name: postgres-magalu
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+      POSTGRES_DB: magaludb
+    ports:
+      - 5432:5432

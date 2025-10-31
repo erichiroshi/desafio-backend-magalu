@@ -1,4 +1,4 @@
-package com.erichiroshi.magalu.service;
+package com.erichiroshi.magalu.service.exception;
 
 import java.time.LocalDateTime;
 

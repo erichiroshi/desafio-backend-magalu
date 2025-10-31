@@ -4,7 +4,9 @@ import org.springframework.stereotype.Service;
 
 import com.erichiroshi.magalu.controller.dto.ScheduleNotificationDto;
 import com.erichiroshi.magalu.entity.Notification;
+import com.erichiroshi.magalu.entity.Status;
 import com.erichiroshi.magalu.repository.NotificationRepository;
+import com.erichiroshi.magalu.service.exception.NotificationNotFoundException;
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,4 +26,10 @@ public class NotificationService {
                         "Notification with ID: %s not found.", notificationId)));
     }
 
+    public void cancelNotification(Long notificationId) {
+        Notification notification = findById(notificationId);
+
+        notification.setStatus(Status.Values.CANCELED.toStatus());
+        notificationRepository.save(notification);
+    }
 }

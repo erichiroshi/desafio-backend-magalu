@@ -4,8 +4,8 @@ import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.erichiroshi.magalu.service.MagaluException;
-import com.erichiroshi.magalu.service.NotificationNotFoundException;
+import com.erichiroshi.magalu.service.exception.MagaluException;
+import com.erichiroshi.magalu.service.exception.NotificationNotFoundException;
 
 @ControllerAdvice
 public class RestHandlerAdvice {

@@ -1,5 +1,9 @@
 package com.erichiroshi.magalu.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.function.Consumer;
+
 import org.springframework.stereotype.Service;
 
 import com.erichiroshi.magalu.controller.dto.ScheduleNotificationDto;
@@ -31,5 +35,22 @@ public class NotificationService {
 
         notification.setStatus(Status.Values.CANCELED.toStatus());
         notificationRepository.save(notification);
+    }
+
+    public void checkAndSend(LocalDateTime dateTime) {
+        var notifications = notificationRepository
+                .findByStatusInAndDateTimeBefore(List.of(Status.Values.PENDING.toStatus(), Status.Values.ERROR.toStatus()), dateTime);
+
+        notifications.forEach(sendNotification());
+    }
+
+    private Consumer<Notification> sendNotification() {
+        return n -> {
+
+            // - REALIZAR O ENVIO DA NOTIFICACAO
+
+            n.setStatus(Status.Values.SUCCESS.toStatus());
+            notificationRepository.save(n);
+        };
     }
 }

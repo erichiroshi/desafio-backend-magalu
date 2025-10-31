@@ -18,6 +18,14 @@ import lombok.NoArgsConstructor;
 @Table(name = "tb_notifications")
 public class Notification {
 
+    public Notification(LocalDateTime dateTime, String destination, String message, Channel channel, Status status) {
+        this.dateTime = dateTime;
+        this.destination = destination;
+        this.message = message;
+        this.channel = channel;
+        this.status = status;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long notificationId;

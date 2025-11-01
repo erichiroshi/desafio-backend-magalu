@@ -201,7 +201,7 @@ Para contribuir:
 - Desafio original: [Magulu Desafio Backend](problem-magalu.md)
 - Baseado no conteúdo do canal [Build & Run](https://www.youtube.com/watch?v=af4W9Q4vB1s&list=PLxCh3SsamNs7y1Y-QaVdWx0MUh0wvo7TV&index=3)
 
-- Repositório do projeto: [desafio-backend-picpay](https://github.com/erichiroshi/desafio-backend-magalu)
+- Repositório do projeto: [desafio-backend-magalu](https://github.com/erichiroshi/desafio-backend-magalu)
 - Desenvolvido por [**Eric Hiroshi**](https://github.com/erichiroshi)
 - Licença: [MIT](LICENSE)
 
